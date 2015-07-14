@@ -1,0 +1,69 @@
+div.relative {
+	position: relative;
+	top: 10em;
+   	left: 10em;
+    width: 58em;
+    height: 25em;
+  	border: 2px solid grey;
+   	background-color: LightSkyBlue ;
+} 
+div.welcome {
+	border-radius: 10px;
+   	position: absolute;
+    top: 3em;
+   	left: 4em;
+   	width: 20em;
+   	height: 16em;
+   	padding: 1em;
+   	border: 2px solid lightblue;
+   	background-color: white;
+}
+div.latestNews {
+	border-radius: 10px;
+   	position: absolute;
+   	top: 3em;
+   	left: 32em;
+   	width: 20em;
+   	height: 16em;
+   	padding: 1em;
+   	border: 2px solid lightblue;
+   	background-color: white;
+}
+div.learnMore {
+	position: absolute;
+	top: 17em;
+	left: 6em;
+	width: 10em;
+	height: 2em;
+	background-color: green;
+}
+div.news {
+	position: absolute;
+   	top: -3.6em;
+   	left: 1em;
+   	width: 8em;
+   	height: 1.5em;
+   	padding: 1em;
+   	border: 2px solid grey;
+   	border-bottom-style: none;
+   	background-color: LightSkyBlue;
+}
+div.subscribe {
+	position: absolute;
+   	top: -3.6em;
+   	left: 12em;
+   	width: 8em;
+   	height: 1.5em;
+   	padding: 1em;
+   	border: 2px solid grey;
+   	background-color: white;
+   	z-index: -1;
+}
+p{
+	font-size: 14px;
+}
+img{
+	position: absolute;
+   	left: 2em;
+   	top: 5em;
+}
