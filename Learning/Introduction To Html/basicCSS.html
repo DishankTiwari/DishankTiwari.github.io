@@ -20,15 +20,14 @@
     </div>
     <button type="submit" onclick="" id="lern" class="buttons learnMore">LEARN MORE</button>
     <div id="form" class="form1">
-      <h3>Subscription Form</h3>
+      <h1>Subscription Form</h1>
       <form  id="sub_form" name="form1name">
-        <table cellspacing="7">
+        <table cellspacing="18">
           <tr>
             <td>Name</td>
             <td><input type="text" name="name" id="name"></td>
             <td >Country</td>
-            <td><select id="country" name="country">
-            <option value="-1"> </option>
+            <td><select id="country" onclick="optns()" name="country">
             <option value="India">India</option>
             <option value="United States">United States</option>
             </select></td> 
@@ -36,26 +35,43 @@
           <tr>
             <td>Email</td>
             <td><input type="text" name="email" id="email"></td>
-            <td>Address</td>
-            <td><textarea name="address" rows="3" cols="32"></textarea></td>
+            <td id="state1_name" style="visibility:hidden">State</td>
+            <td><select style="visibility: hidden" id="state1" name="country">
+              <option value="West Bengal">West Bengal</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+            </select>
+            <select style="visibility: hidden" id="state2" name="country">
+              <option value="Texas">Texas</option>
+              <option value="California">California</option>
+            </select>
+            </td>
           </tr>
           <tr>
             <td>Sex</td>
             <td><input type="radio" name="sex" value="male">Male
-              <input type="radio" name="sex" value="Female">Female</td>
+            <input type="radio" name="sex" value="Female">Female</td>
+            <td>Description
+            <td><textarea name="description" type="textbox"></textarea></td>
             </tr>
             <tr>
               <td>Interest</td>
-              <td><input type="checkbox" name="interest" class="inter" value="Football">Football
-                <input type="checkbox" name="Interest" value="Movie"class="inter">Movie
-                <input type="checkbox" name="Interest" value="Reading" class="inter">Reading</td>
+              <td><input type="checkbox" name="interest" value="Football">Football
+                <input type="checkbox" name="Interest" value="Movie" onclick="movieType()">Movie
+                <input type="checkbox" name="Interest" value="Reading" >Reading</td>
             </tr>
           </table>
           <button type="reset" value="Reset" class="buttons resetButtons">RESET</button>
-          <button  onclick="jsonval()" id="subscribe" class="buttons submitButton">SUBSCRIBE</button>
+          <button type="button" onclick="jsonVal()" id="subscribe" class="buttons submitButton">SUBSCRIBE</button>
+          <div id="movieType">
+            <div>
+              <h5>Hello</h5>
+              <input type="checkbox">Comedy
+              <input type="checkbox">Action
+              <input type="checkbox">Romantic
+              <button onlick="movieType">SELECT</button>
+            </div>
+          </div>
       </div>
-      
-      
     </form>      
     </div>
 </body>

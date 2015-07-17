@@ -111,3 +111,22 @@ input, select, textarea {
   background-color : #E8E8E8;
   border: 1px solid #E0E0E0;
 }
+#movieType{
+  visibility: hidden;
+  position: absolute;
+  padding: 2px;
+  height:10em;
+  width:50em;
+  vertical-align: center;
+  z-index: 1000;
+}
+.movieType div{
+  position: absolute;
+  top:5em;
+  left:10em;
+  height:10em;
+  width:50em;
+  background-color: grey;
+  border: 1px;
+  padding: 1px;
+}
