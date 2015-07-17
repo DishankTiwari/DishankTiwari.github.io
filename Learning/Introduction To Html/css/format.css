@@ -116,17 +116,17 @@ input, select, textarea {
   position: absolute;
   padding: 2px;
   height:10em;
-  width:50em;
+  width:15em;
   vertical-align: center;
   z-index: 1000;
 }
-.movieType div{
+#movieType{
   position: absolute;
-  top:5em;
-  left:10em;
+  top:15em;
+  left:25em;
   height:10em;
-  width:50em;
-  background-color: grey;
+  width:20em;
+  background-color: lightgrey;
   border: 1px;
   padding: 1px;
 }
