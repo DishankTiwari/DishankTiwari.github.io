@@ -1,0 +1,15 @@
+.option{
+	border-radius: 4px;
+	height: auto;
+	width: auto;
+}
+div{
+	margin:1em 2em 1em 2em;
+	padding: 4em;
+	text-align: right;
+}
+input{
+	height: auto;
+	width: 3em;
+	direction:rtl;
+}
