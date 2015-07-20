@@ -1,3 +1,12 @@
+a {
+	color:inherit;
+}
+hr{
+	margin:4em 3em 3em 1em;
+}
+h4{
+	margin:0em;
+}
 .fixed {
 	position: fixed;
 	top: 0;
@@ -20,6 +29,10 @@
 	left:7em;
 	padding:2em;
 }
+.logos{
+	height: 2em;
+	width: 2em;
+}
 .data2{
 	position:fixed;
 	top:48em;
@@ -28,54 +41,22 @@
 	font-size: 13px;
 	color:#C0C0C0;
 }
-a {
-	color:inherit;
+.logo_c{
+	height: 1em;
+	width: 1em;
 }
 .moving{
 	position:absolute;
 	top:0em;
 	left:310px;
 	padding:3em;
-	margin-right: 2em;
+	margin-right: 3em;
 	color: #717171;
 }
-hr{
-	margin:4em 3em 3em 1em;
-}
 img{
-	height:5em;
-	width:5em;
+	height:6em;
+	width:6em;
 	border-radius: 50px;
-}
-.scrnshots{
-	height:7em;
-	width: 15em;
-	border-radius: 3px;
-}
-.logos{
-	height: 2em;
-	width: 2em;
-}
-.logo_c{
-	height: 1em;
-	width: 1em;
-}
-div.img {
-    margin: 1em 1em 1em 0em;
-    padding: 2px;
-    height: auto;
-    width: auto;
-    float: left;
-}	
-div.img img {
-    display: inline;
-    margin: 2px;  
-}
-.getIn{
-	position: absolute;
-	top:60em;
-	height: auto;
-	width: auto;
 }
 .buttons{
 	border-radius: 4px;
@@ -89,11 +70,40 @@ div.img img {
 	border-color: #479147;
 	color: #479147;
 }
+div.img {
+    margin: 1em 1em 1em 0em;
+    padding: 2px;
+    height: auto;
+    width: auto;
+    float: left;
+}	
+div.img img {
+    display: inline;
+    margin: 2px;  
+}
+.scrnshots{
+	height:7em;
+	width: 15em;
+	border-radius: 3px;
+}
+.sizeP{
+	font-size: 1em;
+}
 .fullPortfolio {
 	height: auto;
     width: auto;
     margin: 1em 1em 1em 0em;
     padding: 2px;
+}
+.getIn{
+	position: absolute;
+	top:55em;
+	height: auto;
+	width: auto;
+}
+.con{
+	margin-top: 2em;
+	float: right;
 }
 .boxes{
 	border:none;
@@ -107,20 +117,14 @@ div.img img {
 	font-size:12px;
 	margin-top: 2em;
 	margin-bottom: 1.5em;
-	color:#888000;
+	color:#B0C4DE;
 }
 .messageBox{
 	width:36.5em;
 	height:10em;
 	margin-bottom: 2.5em;
+	color:#B0C4DE;
 }
-h4{
-	margin:0em;
-}
-.sizeP{
-	font-size: 1em;
-}
-.con{
-	margin-top: 2em;
-	float: right;
+.marginn{
+	margin: 0em 10em 0em 0em;
 }
