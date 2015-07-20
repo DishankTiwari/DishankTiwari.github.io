@@ -63,6 +63,3 @@ function movieType(){
   l = document.getElementById("movieType");
   l.style.visibility = (l.style.visibility == "visible") ? "hidden" : "visible";
 }
-function back(){
-  document.getElementById("movieType").style.visibility == "hidden";
-}

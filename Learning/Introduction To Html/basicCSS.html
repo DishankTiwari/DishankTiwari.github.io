@@ -18,11 +18,11 @@
     	<h1>Latest News</h1>
     	<img src="img/image.jpg">
     </div>
-    <button type="submit" onclick="" id="lern" class="buttons learnMore">LEARN MORE</button>
+    <button type="submit" id="lern" class="buttons learnMore">LEARN MORE</button>
     <div id="form" class="form1">
       <h1>Subscription Form</h1>
       <form  id="sub_form" name="form1name">
-        <table cellspacing="18">
+        <table cellspacing="12">
           <tr>
             <td>Name</td>
             <td><input type="text" name="name" id="name"></td>
@@ -47,16 +47,20 @@
             </td>
           </tr>
           <tr>
+            <td>Contact No.</td>
+            <td><input type"number"></td>
+            <td>Description</td>
+            <td><textarea name="description" type="textbox"></textarea></td>
+          </tr>
+          <tr>
             <td>Sex</td>
             <td><input type="radio" name="sex" value="male">Male
             <input type="radio" name="sex" value="Female">Female</td>
-            <td>Description
-            <td><textarea name="description" type="textbox"></textarea></td>
             </tr>
             <tr>
               <td>Interest</td>
               <td><input type="checkbox" name="interest" value="Football">Football
-                <input type="checkbox" name="Interest" value="Movie" onclick="movieType()">Movie
+                <input type="checkbox" name="Interest" value="Movie" onclick="movieType();">Movie
                 <input type="checkbox" name="Interest" value="Reading" >Reading</td>
             </tr>
           </table>
