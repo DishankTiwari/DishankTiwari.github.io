@@ -46,4 +46,7 @@ function memory_p(value){
 		value = memory[memory.length-1];
 		box.value = value - "-";
 	}
+	else if(value==="%") {
+		box.value = eval(box.value/100);
+	}
 }
