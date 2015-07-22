@@ -22,14 +22,13 @@ function memory_p(value){
 	memory_p.index=1;
 	if (value=="MS") {
 		memory.push(box.value);
-		console.log(box.value);
 	}
 	else if(value=="MC"){
 		memory=[];
 		memory_p.index=1;
 		alert("Memory Has Been Cleared!!");
 		box.value=0;	
-		opleft=0;
+		cal_oprtr=0;
 		display.current=0;
 		digits=0;
 	}
@@ -40,7 +39,26 @@ function memory_p(value){
 		else{
 			box.value=memory[(memory.length)-memory_p.index];
 			memory_p.index++;
-			console.log(box.value);
 		}
 	}
+	else if(value=="M+"){
+		value = memory[memory.length-1];
+		box.value = value + "+";
+	}
+	else if(value=="M-"){
+		value = memory[memory.length-1];
+		box.value = value - "-";
+	}
+	else if(cal_oprtr==0){
+    	if(value==="%"){
+        	display.current/=100;
+        	display.number="";
+        }
+      	else{
+        	display.number=display.current;
+        	display.number+=value;
+        	cal_oprtr++;
+        	display.current=0;
+      	}
+    }
 }
