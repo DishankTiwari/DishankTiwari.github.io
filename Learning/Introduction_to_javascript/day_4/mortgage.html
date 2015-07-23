@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Mortgage Calculator</title>
+	<link rel="stylesheet" type="text/css" href="mortgage.css">
+	<script type="text/javascript" src="mortgage.js"></script>
+</head>
+<body>
+	<form class="format">
+		<h1>Mortgage Calculator</h1>
+		<table class="table_style" cellpadding="3px">
+			<tr>
+				<td>Loan Amount:</td>
+				<td><input id="p" type="text" value="Load Amount" onfocus="inputFocus(this)" onblur="inputBlur(this)"></td>
+			</tr>
+			<tr>
+				<td>Interest Rates:</td>
+				<td><input id="r" type="text" value="Interest Rate" onfocus="inputFocus(this)" onblur="inputBlur(this)"></td>
+			</tr>
+			<tr>
+				<td>Time(Years):</td>
+				<td><input id="t" type="text" value="Time(Years)" onfocus="inputFocus(this)" onblur="inputBlur(this)"></td>
+			</tr><br>
+			<tr>
+				<td><button type="button" name="ss" onclick="loan()">Calculate</button></td>
+			</tr><br>
+			<tr>
+				<td>Monthly Payment(EMI):</td>
+				<td><input id="emi" type="text" readonly> </td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

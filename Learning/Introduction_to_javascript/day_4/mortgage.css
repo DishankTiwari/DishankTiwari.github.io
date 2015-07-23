@@ -1,0 +1,16 @@
+.format{
+	width:355px;
+	height:280px;
+	border: 5px solid black;
+	text-align: center;
+	background: #1E90FF;
+	margin:100px auto;
+}
+h1{
+	color:#000066;
+}
+.table_style {
+	font-size:15px;
+	color: #00008B;
+	font-weight: bold;
+}
