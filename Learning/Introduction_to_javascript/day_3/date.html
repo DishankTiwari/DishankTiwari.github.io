@@ -1,0 +1,25 @@
+<!DOCTYPE Html>
+<html>
+<head>
+	<title>Date Calculator</title>
+	<link rel="stylesheet" type="text/css" href="date.css">
+<script type="text/javascript" src="date.js"></script>
+</head>
+<body>
+	<form id="format">
+		<p>Date 1 -<input type="text" id="date1" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
+			Date 2 -<input type="text" id="date2" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
+			<button type="button" onclick="dateDifference()">Submit</button></p>
+		<p>Difference in Days -<input type="text" id="dateDiff" value=" " name="result" readonly></input></p>
+		<hr>
+		<p>Time 1 -<input type="text" id="startTime" value="0" onfocus="inputFocus(this)" onblur="inputBlur(this)" onchange="timeDifference(this,document.getElementById('endTime'))"/>
+			Time 2 -<input type="text" id="endTime" value="0" onfocus="inputFocus(this)" onblur="inputBlur(this)" onchange="timeDifference(document.getElementById('startTime'),this)"/>
+			Result -<input type="text" id="hour" name="hour" readonly/>
+		</p><hr>
+        <p>Date -<input type="text" id="date" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
+            Days-<input type="text" id="add" value="00" name="days" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
+            <button type="button" onclick="finalDate()">Submit</button></p>
+        <p>Difference in Days -<input type="text" id="dateDiff" value=" " name="result" readonly></input></p>
+	</form>
+</body>
+</html>

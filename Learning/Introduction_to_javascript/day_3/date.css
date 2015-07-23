@@ -1,0 +1,11 @@
+input{
+	width:80px;
+}
+#format{
+	width:470px;
+	height:240px;
+	border: 5px solid black;
+	text-align: center;
+	background: #6495ED;
+	margin:100px auto;
+}
