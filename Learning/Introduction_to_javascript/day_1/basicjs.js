@@ -30,7 +30,7 @@ function result(id) {
 		var innerDiv = document.createElement('div');
 		innerDiv.id = "block2" + i;
 		innerDiv.setAttribute("style", "width : 50px");
-		innerDiv.setAttribute("style", "display : inline-block");
+		innerDiv.setAttribute("style", "margin-top : 50px");
 		innerDiv.style.margin = "8px";
 		iDiv.appendChild(innerDiv);
 		if(id === "add")
