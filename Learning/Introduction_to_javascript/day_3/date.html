@@ -7,19 +7,35 @@
 </head>
 <body>
 	<form id="format">
+		<h3>Date Difference</h3>
 		<p>Date 1 -<input type="text" id="date1" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
 			Date 2 -<input type="text" id="date2" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
 			<button type="button" onclick="dateDifference()">Submit</button></p>
 		<p>Difference in Days -<input type="text" id="dateDiff" value=" " name="result" readonly></input></p>
 		<hr>
-		<p>Time 1 -<input type="text" id="startTime" value="0" onfocus="inputFocus(this)" onblur="inputBlur(this)" onchange="timeDifference(this,document.getElementById('endTime'))"/>
-			Time 2 -<input type="text" id="endTime" value="0" onfocus="inputFocus(this)" onblur="inputBlur(this)" onchange="timeDifference(document.getElementById('startTime'),this)"/>
-			Result -<input type="text" id="hour" name="hour" readonly/>
-		</p><hr>
-        <p>Date -<input type="text" id="date" value="mm/dd/yyyy" name="date" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
-            Days-<input type="text" id="add" value="00" name="days" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
-            <button type="button" onclick="finalDate()">Submit</button></p>
-        <p>Difference in Days -<input type="text" id="dateDiff" value=" " name="result" readonly></input></p>
+
+		<h3>Time Difference</h3>
+		<div class="Time">
+			<input type="text" name="time" id="firstHour" maxlength="2" value="Hour" onfocus="inputFocus(this)" onblur="inputBlur(this)">
+			<input type="text" name="time" id="firstMinute" value="Minute" onfocus="inputFocus(this)" onblur="inputBlur(this)">
+			<select name="amorpm" id="am"><option value="AM">AM</option> <option value="PM">PM</option></select>
+			<input type="text" name="time" id="secondHour" maxlength="2" value="Hour" onfocus="inputFocus(this)" onblur="inputBlur(this)">
+			<input type="text" name="time" id="secondMinute" value="Minute" onfocus="inputFocus(this)" onblur="inputBlur(this)">
+			<select name="amorpm" id="pm"><option value="AM">AM</option><option value="PM">PM</option> </select>
+			<p id="timedifference"></p>
+			<button type="button" name="calculate" onclick="timeDifference()">Submit</button>
+			<p>Time Difference -<input class="res" type="text" id="timeDiff" value=" " name="result" readonly></input></p>
+		</div>
+		<hr>
+
+		<h3>Date/Time Interval</h3>
+		<div>
+			<p>Date-Time -<input class="resInter" id="date" type="datetime-local" required/></p>
+			Days -<input id="day" value="0" min="0" type="number"/>
+			Hours -<input id="hour" value="0" min="0" max="23" type="number"/>
+			<p><button type="button" name="calculate" onclick="timeInterval()">Submit</button></p>
+			<p>Date/Time Interval -<input class="resInter" type="text" id="interval" value=" " name="result" readonly></input></p>
+		</div>
 	</form>
 </body>
 </html>

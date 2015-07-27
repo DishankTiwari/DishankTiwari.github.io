@@ -5,10 +5,21 @@ function addition(id) {
 	document.getElementById(id).innerHTML = "&nbsp;&nbsp;" + x + "</br>" + "+" + y + "</br>" + "<p><input type=text id=re  onkeydown=checkdown(this) onkeyup=checkup("+z+",this.value,this)></p>";
 }
 function subtraction(id) {
+	var z, first, second, count;
 	var x = Math.round(100*Math.random());
 	var y = Math.round(100*Math.random());
-	z = x - y;
-	document.getElementById(id).innerHTML = "&nbsp;&nbsp;" + x + "</br>" + "-" + y + "</br>" + "<p><input type=text id=re  onkeydown=checkdown(this) onkeyup=checkup("+z+",this.value,this)></p>";
+	if (y > x) {
+		first = y;
+		second = x;
+	}
+	else {
+		first = x;
+		second = y;
+	}
+	z = first - second;
+	count = z;
+	z = first - second;
+	document.getElementById(id).innerHTML = "&nbsp;&nbsp;" + first + "</br>" + "-" + second + "</br>" + "<p><input type=text id=re  onkeydown=checkdown(this) onkeyup=checkup("+z+",this.value,this)></p>";
 }
 function checkup(c,d,idd){
 	if(c==d)
