@@ -5,7 +5,7 @@ function inputFocus(i) {
     }
 }
 function inputBlur(i) {
-    if(i.value=="") {
+    if(i.value==="") {
         i.value=i.defaultValue;
         i.style.color="#B0C4DE";
     }
@@ -63,8 +63,8 @@ function timeInterval(){
         limit = 30;
     else
         limit = 31;
-    var day = parseInt(document.getElementById("day").value);
-    var hour = parseInt(document.getElementById("hour").value);
+    day = parseInt(document.getElementById("day").value);
+    hour = parseInt(document.getElementById("hour").value);
     hour += hour;
     day += day;
     if(hour >= 24){
@@ -81,7 +81,7 @@ function timeInterval(){
     }
     if(hour > 12){
         timeSpan = "PM";
-        hour %= 12
+        hour %= 12;
     }
     var interResult = month + " / " + day + " / " + year + ", " + hour + " : 00 " + timeSpan;
     document.getElementById("interval").value = interResult;

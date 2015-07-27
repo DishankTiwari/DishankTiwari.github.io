@@ -5,7 +5,7 @@ function inputFocus(i) {
     }
 }
 function inputBlur(i) {
-    if(i.value=="") {
+    if(i.value==="") {
     	i.value=i.defaultValue;
     	i.style.color="#B0C4DE";
     }

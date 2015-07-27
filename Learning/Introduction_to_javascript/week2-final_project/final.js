@@ -19,13 +19,12 @@
 	}
 	function calc(){
 		if(document.getElementById('basicForm')){
-				document.getElementsByTagName('body')[0].removeChild(document.getElementById('basicForm'));
+			document.getElementsByTagName('body')[0].removeChild(document.getElementById('basicForm'));
 		}
 		if(document.getElementById('dateForm'))
 			document.getElementsByTagName('body')[0].removeChild(document.getElementById('dateForm'));
 		if(document.getElementById('mortForm'))
 			document.getElementsByTagName('body')[0].removeChild(document.getElementById('mortForm'));
-		
 		if(this.id=="radio1"){
 			basic();
 		}
