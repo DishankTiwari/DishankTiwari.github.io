@@ -4,75 +4,84 @@
   <title>HTML_CSS_DOM</title>
   <link rel="stylesheet" type="text/css" href="format.css">
   <script src="basic_DOM.js"></script>
-</head>
-<body>
-	<?php
-	$name_error = $email_error = $country_error = $description_error = $sex_error = $interest_error = $number_error = "";
-	$name = $email = $country = $description = $sex = $interest = $number = $message = "";
-  $checking=0;
-	if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-		if (empty($_POST["name"])) {
-			$name_error = "Name is required";
-		}
-		else {
-			$name = value($_POST["name"]);
-		}
-		if (empty($_POST["email"])) {
-			$email_error = "Email is required";
-    }
-		else {
-			$email = value($_POST["email"]);
-			if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$email_error = "Invalid Email";
-			}
-		}
-		if (empty($_POST["country"])) {
-			$country_error = "Required";
-    }
-		else {
-			$country = value($_POST["country"]);
-		}
-		if (empty($_POST["description"])) {
-			$description_error = "Required";
-    }
-		else {
-			$description = value($_POST["description"]);
-		}
-		if (empty($_POST["sex"])) {
-			$sex_error = "Sex is required"; 
+  <?php
+  $name_error = $email_error = $country_error = $description_error = $sex_error = $interest_error = $number_error = "";
+  $name = $email = $country = $description = $sex = $interest = $number = $message = "";
+  $Flag=0;
+  if ($_SERVER["REQUEST_METHOD"] == "POST") { $Flag=1;
+    if (empty($_POST["name"])) {
+      $name_error = "Name is required";
+      $Flag = 0;
     }
     else {
-			$sex = value($_POST["sex"]);
-		}
-		if (empty($_POST["interest"])) {
-			$interest_error = "Required";
+      $name = value($_POST["name"]);
+    }
+    if (empty($_POST["email"])) {
+      $email_error = "Email is required";
+      $Flag = 0;
     }
     else {
-			$interest = value($_POST["interest"]);
-		}
-		if (empty($_POST["number"])) {
-			$number_error = "Number is required";
+      $email = value($_POST["email"]);
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $email_error = "Invalid Email";
+      }
+    }
+    if (empty($_POST["country"])) {
+      $country_error = "Required";
+      $Flag = 0;
     }
     else {
-			$number = value($_POST["number"]);
-			if(!preg_match("/^[789][0-9]{9}$/", $number)){
-				$number_error = "Invalid Number";
-			}
-		}
-	}
-	function value($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-  
-    $data = "$name, $email, $country, $description, $sex, $interest, $number\n";
+      $country = value($_POST["country"]);
+    }
+    if (empty($_POST["description"])) {
+      $description_error = "Required";
+      $Flag = 0;
+    }
+    else {
+      $description = value($_POST["description"]);
+    }
+    if (empty($_POST["sex"])) {
+      $sex_error = "Sex is required";
+      $Flag = 0; 
+    }
+    else {
+      $sex = value($_POST["sex"]);
+    }
+    if (empty($_POST["interest"])) {
+      $interest_error = "Required";
+      $Flag = 0;
+    }
+    else {
+      $interest = value($_POST["interest"]);
+    }
+    if (empty($_POST["number"])) {
+      $number_error = "Number is required";
+      $Flag = 0;
+    }
+    else {
+      $number = value($_POST["number"]);
+      if(!preg_match("/^[789][0-9]{9}$/", $number)){
+        $number_error = "Invalid Number";
+      }
+    }
+  }
+  function value($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+    if($Flag == 1){
+    $data = "$name, $email, $number, $country, $sex, $interest,$description \n";
     $myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
     fwrite($myf, $data);
-    fclose($myf);  
-	?>
-	<div id="tab" class="relative">
+    fclose($myf);
+    $message = "Registered Successfully";  
+    }
+  ?>
+</head>
+<body>
+		<div id="tab" class="relative">
     <span class="check"><?php echo $message;?></span>
     <div onclick="tab1()" id="news" class="tabs tab_1"><center>News</center> </div>  
     <div onclick="tab2()" id="sub" class="tabs tab_2"><center>Subscribe</center></div>
@@ -129,7 +138,7 @@
       </form>
       
     </div>
-     <span class="check"><?php echo $message;?></span>
+     <span class="check"><?php echo $message; ?></span>
     <div id="movieType">
             <div>
               <h5>Choose You Movie Type:</h5>
