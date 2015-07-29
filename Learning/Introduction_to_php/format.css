@@ -1,0 +1,140 @@
+h1{
+  font-size: 22px;
+  color: #757575;
+}
+.relative {
+  position: relative;
+  border-radius: 10px;
+  background-color: #E4EFFF;
+  top: 10em;
+  left: 10em;
+  width: 50em;
+  height: 23.5em;
+  border: 2px solid #bdcdee;  
+}
+.welcome {
+  position: absolute;
+  border-radius: 10px;
+  
+  top: 1.5em;
+  left: 1.5em;
+  height: 16em;
+  width: 20.5em;
+  padding: 1em;
+  border: 2px solid #bdcdee;
+  background-color: white;  
+}
+.latestNews {
+  position: absolute;
+  border-radius: 10px;
+  top: 1.5em;
+  right:1.5em;
+  width: 20.5em;
+  height: 16em;
+  padding: 1em;
+  border: 2px solid #bdcdee;
+  background-color: white;
+}
+.tabs{
+  position: absolute;
+  top: -2.6em;
+  border-radius: 4px;
+  height: 2em;
+  width: 8em;
+  padding: 5px;
+  border: 1px solid #99CCFF;
+  border-bottom-style: none;
+  z-index: 1;
+  cursor: pointer;
+}
+.tab_1 {
+  font-color: blue;
+  left: 2em;
+  background-color: #E5EFFF;
+}
+.tab_2 {
+  left: 11em;
+  background-color: ;
+  margin: auto;
+}
+img {
+  width: 20em;
+  height: 12em;
+}
+.form1 {
+  position: absolute;
+  display:none;
+  border-radius: 5px;
+  background-color: white;
+  top: 1.5em;
+  right:1.5em;
+  bottom: 1.5em;
+  left:1.5em;
+  padding: 1em;
+  border: 1px solid #bdcdee;
+}
+.buttons{
+  position: absolute;
+  border-radius: 4px;
+  text-decoration: none;
+  width:10em;
+  padding: 2px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size:17px;
+  background: #25970E;
+}
+.learnMore{
+  top:17.5em;
+  left:7em;
+  height:2em;
+  display: block;
+}
+.submitButton {
+  top:17.5em;
+  left:32em;
+  height:3em;
+  display: none;
+}
+.resetButton{
+  top:17.5em;
+  left:20em;
+  height:3em;
+  display: none;
+}
+p {
+  color: #717171;
+  font-size: 13.81px;
+}
+input, select, textarea {
+  background-color : #E8E8E8;
+  border: 1px solid #E0E0E0;
+}
+#movieType{
+  visibility: hidden;
+  position: absolute;
+  padding: 2px;
+  height:10em;
+  width:15em;
+  vertical-align: center;
+  z-index: 1000;
+}
+#movieType{
+  position: absolute;
+  top:15em;
+  left:25em;
+  height:10em;
+  width:20em;
+  background-color: lightgrey;
+  border: 1px;
+  padding: 1px;
+}
+span{
+  color:red;
+}
+.check{
+  position: absolute;
+  top: 18em;
+  font-size: 32px;
+}

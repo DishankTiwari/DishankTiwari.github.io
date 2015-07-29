@@ -82,8 +82,8 @@ div.img img {
     margin: 2px;  
 }
 .scrnshots{
-	height:7em;
-	width: 15em;
+	height:12em;
+	width: 22em;
 	border-radius: 3px;
 }
 .sizeP{
@@ -97,7 +97,7 @@ div.img img {
 }
 .getIn{
 	position: absolute;
-	top:55em;
+	top:85em;
 	height: auto;
 	width: auto;
 }
