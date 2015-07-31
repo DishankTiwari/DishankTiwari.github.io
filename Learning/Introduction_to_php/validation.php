@@ -1,5 +1,6 @@
 <?php
-  $name_error = $email_error = $country_error = $description_error = $sex_error = $interest_error = $number_error = "";
+  $name_error = $email_error = $country_error = $description_error =  $interest_error = $number_error = "";
+  $sex_error =" ";
   $name = $email = $country = $description = $sex = $number = $message = "";
   $interest ="";
   $Flag=0;
@@ -22,7 +23,7 @@
       }
     }
     if (empty($_POST["country"])) {
-      $country_error = "* Select A Country";
+      $country_error = "* Select a Country";
       $Flag = 0;
     }
     else {
@@ -35,15 +36,15 @@
     else {
       $description = $_POST["description"];
     }
-    if (empty($_POST["sex"])) {
-      $sex_error = "* Sex is required";
-      $Flag = 0; 
+    if (($_POST["sex"]!="male")||($_POST["sex"]!="female")) {
+      $sex_error = "* sex Is Mandatory";
+      $Flag = 0;
     }
     else {
       $sex = $_POST["sex"];
     }
     if (empty($_POST["interest"])) {
-      $interest_error = "* Confirm Your Gender";
+      $interest_error = "* Confirm Your Interest";
       $Flag = 0;
     }
     else {
@@ -77,32 +78,4 @@
       echo "<br>" . $message;
     }
   }
-    //   $servername = "127.0.0.1";
-    //   $username = "root";
-    //   $password = "";
-    //   $dbname = "dishank";
-
-    //   $conn = mysqli_connect($servername, $username, $password, $dbname);
-    //   if (!$conn) {
-    //     die("Connection failed: " . mysqli_connect_error());
-    //   }
-
-    //   $sql = "INSERT INTO subscribe (name, email, number, country, sex, description) VALUES ('$name', '$email', '$number', '$country', '$sex', '$description')";
-    //   if (mysqli_query($conn, $sql)) {
-    //     echo "Successful";
-    //   } else {
-    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    //   }
-    //   $sql1 = "INSERT INTO interest (email, hobby1, hobby2, hobby3) VALUES ('$email', '$interest[0]', '$interest[1]', '$interest[2]')";
-     
-    //   mysqli_query($conn, $sql1);
-
-    // mysqli_close($conn);
-    
-  // function value($data) {
-  //   $data = trim($data);
-  //   $data = stripslashes($data);
-  //   $data = htmlspecialchars($data);
-  //   return $data;
-  // }
   ?>

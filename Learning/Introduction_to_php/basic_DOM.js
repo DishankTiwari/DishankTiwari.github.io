@@ -74,20 +74,26 @@ function csv() {
     var number = document.getElementById("number").value;
     var country = document.getElementById("country").value;
     var sex = document.getElementsByName("sex");
-    // if(sex[0].checked)
-    //     sex=="male";
-    // if(sex[1].checked)
-    //     sex=="female";
-    var interest = [];
-        interest = document.getElementsByName("interest");
+    if(sex[0].checked){
+      sex = "male";
+    }
+     if(sex[1].checked)
+      sex = "female";
+    var inter = document.getElementsByName("interest[]");
+    var  interest = "";
+      for (var i = 0, n = inter.length; i < n; i++) {
+          if (inter[i].checked) {
+              interest += inter[i].value;
+          }
+      }    
     var description = document.getElementById("description").value;
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("mySpan").innerHTML = xmlhttp.responseText;
             console.log(xmlhttp.responseText);
         }
-    }
-    var values = "name=" + name + "&email=" + email + "&number=" + number + "&country=" + country + "&sex=" + sex  + "&description=" + description;
+    };
+    var values = "name=" + name + "&email=" + email + "&number=" + number + "&country=" + country + "&sex=" + sex  + "&interest=" + interest + "&description=" + description;
     xmlhttp.open("POST", "validation.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(values);

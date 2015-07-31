@@ -132,6 +132,8 @@ input, select, textarea {
 }
 .error{
   color:red;
+  position:absolute;
+  left:62em;
 }
 .check{
   position: absolute;
