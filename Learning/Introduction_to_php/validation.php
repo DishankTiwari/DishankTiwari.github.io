@@ -36,12 +36,12 @@
     else {
       $description = $_POST["description"];
     }
-    if (($_POST["sex"]!="male")||($_POST["sex"]!="female")) {
-      $sex_error = "* sex Is Mandatory";
-      $Flag = 0;
+    if ( ($_POST["sex"]=="male")||($_POST["sex"]=="female") ) {
+      $sex = $_POST["sex"];
     }
     else {
-      $sex = $_POST["sex"];
+     $sex_error = "* sex Is Mandatory";
+      $Flag = 0;
     }
     if (empty($_POST["interest"])) {
       $interest_error = "* Confirm Your Interest";
