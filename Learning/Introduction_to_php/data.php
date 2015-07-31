@@ -20,14 +20,13 @@
 			<table width="650" border="1" cellspacing="0" cellpadding="5">
 				<tr>
 					<td><? print $db_field['name']; ?></td>
-					<td><? print $db_field['name']; ?></td>
 					<td><? print $db_field['email']; ?></td>
 					<td><? print $db_field['number']; ?></td>
 					<td><? print $db_field['country']; ?></td>
 					<td><? print $db_field['sex']; ?></td>
 					<td><? print $db_field['description'] . "<BR>"; ?></td>
 					<td><input type="submit" name="submit" value="Edit"><?  ?></td>
-					<td><input type="submit" name="submit" value="Delete"><? mysql_query("DELETE FROM subscribe WHERE $db_field[$email] ='email'");  ?></td>
+					<td><input type="submit" name="submit" value="Delete"><? mysql_query("DELETE FROM subscribe WHERE $['email']= '$email'");  ?></td>
 				</tr>
 			</table>
 					<?php

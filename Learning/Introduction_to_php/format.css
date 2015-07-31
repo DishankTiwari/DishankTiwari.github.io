@@ -130,7 +130,7 @@ input, select, textarea {
   border: 1px;
   padding: 1px;
 }
-span{
+.error{
   color:red;
 }
 .check{

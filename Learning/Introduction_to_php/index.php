@@ -4,109 +4,9 @@
   <title>HTML_CSS_DOM</title>
   <link rel="stylesheet" type="text/css" href="format.css">
   <script src="basic_DOM.js"></script>
-  <?php
-  $name_error = $email_error = $country_error = $description_error = $sex_error = $interest_error = $number_error = "";
-  $name = $email = $country = $description = $sex = $number = $message = "";
-  $interest ="";
-  $Flag=0;
-  if ($_SERVER["REQUEST_METHOD"] == "POST") { $Flag=1;
-    if (empty($_POST["name"])) {
-      $name_error = "Name is required";
-      $Flag = 0;
-    }
-    else {
-      $name = $_POST["name"];
-    }
-    if (empty($_POST["email"])) {
-      $email_error = "Email is required";
-      $Flag = 0;
-    }
-    else {
-      $email = $_POST["email"];
-      if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $email_error = "Invalid Email";
-      }
-    }
-    if (empty($_POST["country"])) {
-      $country_error = "Required";
-      $Flag = 0;
-    }
-    else {
-      $country = $_POST["country"];
-    }
-    if (empty($_POST["description"])) {
-      $description_error = "Required";
-      $Flag = 0;
-    }
-    else {
-      $description = $_POST["description"];
-    }
-    if (empty($_POST["sex"])) {
-      $sex_error = "Sex is required";
-      $Flag = 0; 
-    }
-    else {
-      $sex = $_POST["sex"];
-    }
-    if (empty($_POST["interest"])) {
-      $interest_error = "Required";
-      $Flag = 0;
-    }
-    else {
-      $interest = $_POST["interest"];
-    }
-    if (empty($_POST["number"])) {
-      $number_error = "Number is required";
-      $Flag = 0;
-    }
-    else {
-      $number = $_POST["number"];
-      if(!preg_match("/^[789][0-9]{9}$/", $number)){
-        $number_error = "Invalid Number";
-      }
-    }
-    if($Flag == 1){
-    //<-- $data = "$name, $email, $number, $country, $sex, $interest,$description \n";
-    //$myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
-    //fwrite($myf, $data);
-    //fclose($myf); -->
-      $message = "Registered Successfully";  
-
-      $servername = "127.0.0.1";
-      $username = "root";
-      $password = "";
-      $dbname = "dishank";
-
-      $conn = mysqli_connect($servername, $username, $password, $dbname);
-      if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
-
-      $sql = "INSERT INTO subscribe (name, email, number, country, sex, description) VALUES ('$name', '$email', '$number', '$country', '$sex', '$description')";
-      if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      }
-      $sql1 = "INSERT INTO interest (email, hobby1, hobby2, hobby3) VALUES ('$email', '$interest[0]', '$interest[1]', '$interest[2]')";
-     
-      mysqli_query($conn, $sql1);
-
-    mysqli_close($conn);
-    }
-  }
-  // function value($data) {
-  //   $data = trim($data);
-  //   $data = stripslashes($data);
-  //   $data = htmlspecialchars($data);
-  //   return $data;
-  // }
-  
-  ?>
 </head>
 <body>
 		<div id="tab" class="relative">
-    <span class="check"><?php echo $message;?></span>
     <div onclick="tab1()" id="news" class="tabs tab_1"><center>News</center> </div>  
     <div onclick="tab2()" id="sub" class="tabs tab_2"><center>Subscribe</center></div>
     <div id="left" class="welcome">
@@ -121,48 +21,50 @@
     <button type="submit" id="lern" class="buttons learnMore">LEARN MORE</button>
     <div id="form" class="form1">
       <h1>Subscription Form</h1>
-      <form  id="sub_form" name="form1name" method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <form  id="sub_form" name="form1name" method="post">
         <table cellspacing="12">
           <tr>
             <td>Name</td>
-            <td><input type="text" name="name" value="<?php echo $name;?>" id="name"><span>* <?php echo $name_error;?></span></td>
+            <td><input type="text" name="name" id="name"></td>
             <td >Country</td>
-            <td><select id="country" name="country" value="<?php echo $country;?>">
+            <td><select id="country" name="country">
               <option value=""> </option>
-              <option value="India" <?php if ($country == "India") { echo " selected"; } ?>>India</option>
-              <option value="US" <?php if ($country == "US") { echo " selected"; } ?>>US</option>
-            </select> <span>* <?php echo $country_error;?></span>
+              <option value="India">India</option>
+              <option value="US">US</option>
+            </select>
             </td>
           </tr>
           <tr>
             <td>Email</td>
-            <td><input type="text" name="email" value="<?php echo $email;?>" id="email"><span>* <?php echo $email_error;?></span></td>
+            <td><input type="text" name="email" id="email"></td>
           </tr>
           <tr>
             <td>Contact No.</td>
-            <td><input type"number" value="<?php echo $number;?>" name="number"><span>* <?php echo $number_error;?></span></td>
+            <td><input type"number" name="number" id="number"></td>
             <td>Description</td>
-            <td><textarea name="description" value="<?php echo $description;?>" type="textbox"></textarea><span>* <?php echo $description_error;?></span></td>
+            <td><textarea name="description" type="textbox" id="description"></textarea></td>
           </tr>
           <tr>
             <td>Sex</td>
-            <td><input type="radio" name="sex" <?php if (isset($sex) && $sex=="male") echo "checked";?> value="male">Male
-            <input type="radio" name="sex"  <?php if (isset($sex) && $sex=="female") echo "checked";?> value="Female">Female <span>*<?php echo $sex_error;?></span></td>
+            <td><input type="radio" name="sex" value="male" id="sex">Male
+            <input type="radio" name="sex" value="Female" id="sex">Female</td>
             </tr>
             <tr>
               <td>Interest</td>
-              <td><input type="checkbox" name="interest[]" <?php if (is_array($interest)){ foreach($interest as $value){ if($value == 'Football' ) echo "checked"; }} ?> value="Football">Football
-                <input type="checkbox" name="interest[]"<?php if (is_array($interest)){ foreach($interest as $value){ if($value == 'Movie' ) echo "checked"; }} ?> value="Movie" onclick="movieType();">Movie
-                <input type="checkbox" name="interest[]" <?php if (is_array($interest)){ foreach($interest as $value){ if($value == 'Reading' ) echo "checked"; }} ?> value="Reading" >Reading <span>* <?php echo $interest_error;?></span></td>
+              <td><input type="checkbox" name="interest[]" value="Football"id="interest">Football
+                <input type="checkbox" name="interest[]" value="Movie" id="interest" onclick="movieType();">Movie
+                <input type="checkbox" name="interest[]" value="Reading" id="interest">Reading </td>
             </tr>
           </table>
           <button type="reset" value="Reset" class="buttons resetButtons">RESET</button>
-          <input type="submit" name="submit" value="Submit" id="subscribe" class="buttons submitButton"><?php if (isset($_POST['submit'])) { echo "<script type='text/javascript'>tab2();</script>"; } ?>
+          <button type="button" name="submit" onclick="csv()" id="subscribe" class="buttons submitButton">SUBMIT</button>
         </div>
       </form>
       
     </div>
-     <span class="check"><?php echo $message; ?></span>
+     <div class="error" id="mySpan"></div>
+     </div>
+    
     <div id="movieType">
             <div>
               <h5>Choose You Movie Type:</h5>
