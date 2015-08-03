@@ -61,11 +61,11 @@
       }
     }
     if($Flag == 1){
-      // $data = "$name, $email, $number, $country, $sex, $interest[0], $interest[1], $interest[2], $description \n";
-      // $myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
-      // fwrite($myf, $data);
-      // fclose($myf);
-      // $message = "Registered Successfully";
+      $data = "$name, $email, $number, $country, $sex, $interest[0], $interest[1], $interest[2], $description \n";
+      $myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
+      fwrite($myf, $data);
+      fclose($myf);
+      $message = "Registered Successfully";
       $servername = "127.0.0.1";
       $username = "root";
       $password = "";
