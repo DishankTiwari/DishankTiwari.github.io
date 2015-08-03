@@ -20,7 +20,7 @@
 	}
 	$sql = mysqli_query($conn, "SELECT * from subscribe");
 	
-	echo "<table><tr><th>Name</th><th>E-Mail</th><th>Number</th><th>Country</th><th>Sex</th><th>Description</th></tr>";
+	echo "<table border=1 cellpadding=5><tr><th>Name</th><th>E-Mail</th><th>Number</th><th>Country</th><th>Sex</th><th>Description</th></tr>";
 	while($row = mysqli_fetch_array($sql, MYSQLI_ASSOC))
 	{
 		echo "<tr><td>".$row['name']."</td><td>".$row['email']."</td><td>".$row['number']."</td><td>".$row['country']."</td><td>".$row['sex']."</td><td>".$row['description']."<td><a href='delete.php?email=".$row['email']."'>Delete</a></td><td><a href='edit.php?email=".$row['email']."'>Edit</a></td></tr>";
