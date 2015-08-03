@@ -61,11 +61,30 @@
       }
     }
     if($Flag == 1){
-      $data = "$name, $email, $number, $country, $sex, $interest[0], $interest[1], $interest[2], $description \n";
-      $myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
-      fwrite($myf, $data);
-      fclose($myf);
-      $message = "Registered Successfully"; 
+      // $data = "$name, $email, $number, $country, $sex, $interest[0], $interest[1], $interest[2], $description \n";
+      // $myf = fopen("/home/dishanktiwari/DishankTiwari.github.io/Learning/Introduction_to_php/details.csv", "a");
+      // fwrite($myf, $data);
+      // fclose($myf);
+      // $message = "Registered Successfully";
+      $servername = "127.0.0.1";
+      $username = "root";
+      $password = "";
+      $dbname = "dishank";
+
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
+
+      $sql = "INSERT INTO subscribe (name, email, number, country, sex, description) VALUES ('$name', '$email', '$number', '$country', '$sex', '$description')";
+      if (mysqli_query($conn, $sql)) {
+        echo "Successful";
+      } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+      $sql1 = "INSERT INTO interest (email, hobby1, hobby2, hobby3) VALUES ('$email', '$interest[0]', '$interest[1]', '$interest[2]')";
+      mysqli_query($conn, $sql1);
+      mysqli_close($conn); 
     }
     else{
       echo $name_error;
@@ -78,4 +97,4 @@
       echo "<br>" . $message;
     }
   }
-  ?>
+?>
