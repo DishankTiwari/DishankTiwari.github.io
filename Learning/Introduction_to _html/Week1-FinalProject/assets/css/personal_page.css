@@ -1,3 +1,7 @@
+body{
+	font-family: OpenSans Semibold;
+}
+
 a {
 	color:inherit;
 }
@@ -59,16 +63,15 @@ img{
 	border-radius: 50px;
 }
 .buttons{
-	border-radius: 4px;
-	background-color: white;	
+	position:relative;
+	border: 2px solid #dddddd;
+	background-color: white;
+	border-radius: 5px;
+	color: #757575;
 	width:14em;
 	height:3.5em;
 	padding: 3px;
 	font-size:12px;
-}
-.learnMore{
-	border-color: #479147;
-	color: #479147;
 }
 div.img {
     margin: 1em 1em 1em 0em;
@@ -78,7 +81,6 @@ div.img {
     float: left;
 }	
 div.img img {
-    display: inline;
     margin: 2px;  
 }
 .scrnshots{
@@ -89,15 +91,8 @@ div.img img {
 .sizeP{
 	font-size: 1em;
 }
-.fullPortfolio {
-	height: auto;
-    width: auto;
-    margin: 1em 1em 1em 0em;
-    padding: 2px;
-}
 .getIn{
-	position: absolute;
-	top:85em;
+	position: relative;
 	height: auto;
 	width: auto;
 }
@@ -126,5 +121,10 @@ div.img img {
 	color:#B0C4DE;
 }
 .marginn{
+	position:relative;
 	margin: 0em 10em 0em 0em;
+}
+button:hover {
+    border-color: #479147;
+    color: #479147;
 }

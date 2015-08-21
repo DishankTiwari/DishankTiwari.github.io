@@ -1,3 +1,6 @@
+body{
+  font-family: OpenSans Semibold;
+}
 h1{
   font-size: 22px;
   color: #757575;
@@ -111,22 +114,42 @@ input, select, textarea {
   background-color : #E8E8E8;
   border: 1px solid #E0E0E0;
 }
-#movieType{
+#football {
   visibility: hidden;
   position: absolute;
   padding: 2px;
+  border: 1px;
   height:10em;
   width:15em;
+  top:15em;
+  left:25em;
+  background-color: lightgrey;
   vertical-align: center;
   z-index: 1000;
 }
 #movieType{
+  visibility: hidden;
   position: absolute;
+  padding: 2px;
+  border: 1px;
+  height:10em;
+  width:15em;
   top:15em;
   left:25em;
-  height:10em;
-  width:20em;
   background-color: lightgrey;
+  vertical-align: center;
+  z-index: 1000;
+}
+#reading{
+  visibility: hidden;
+  position: absolute;
+  padding: 2px;
   border: 1px;
-  padding: 1px;
+  height:10em;
+  width:15em;
+  top:15em;
+  left:25em;
+  background-color: lightgrey;
+  vertical-align: center;
+  z-index: 1000;
 }
