@@ -11,17 +11,18 @@ function main() {
     bubble(row, row);
 
     function bubble(cols, rows) {
-        var count = 0;
-        var padding = 20;
-
-        for (var i = 0; i < rows; i++) {
-
-            y = padding + (i * padding)
-            for (var j = 0; j < cols; j++) {
+        var count = 0,
+            left_shift = 350,
+            top_shift = 300,
+            main_radius = 40,
+            step = 2 * Math.PI / 70,
+            angle = 0;
+        for (i = 0; i < amitabh.length; i++) {
+            if (angle < 2 * Math.PI) {
+                var x = left_shift + main_radius * Math.cos(angle);
+                var y = top_shift - main_radius * Math.sin(angle);
                 count++;
-
-                var x = 100 + padding + (j * padding);
-                var r = amitabh[count].retweet_count / 70;
+                var radius = amitabh[count].retweet_count / 70;
 
                 if (arr[count].theme == "cinema")
                     color = "red";
@@ -35,20 +36,20 @@ function main() {
                     color = "lightblue";
                 else if (arr[count].theme == "love")
                     color = "purple";
-
-                var c = paper.circle(x, y, r)
+                paper.circle(x, y, radius)
                     .attr({
                         "fill": color,
                         "stroke": "none",
                         "cursor": "pointer",
                         "title": "@Amitabh Bachchan : " + amitabh[count].text
                     });
-                console.log(arr[count].text);
+                angle += step;
+            } else {
+                angle = 0;
+                main_radius = main_radius + 20;
             }
         }
     }
-    var main_circle = paper.circle(250, 200, 200);
-    paper.text(100, 100);
 
     function s() {
 
@@ -95,6 +96,6 @@ function main() {
                     theme: "love"
                 });
         }
-        
+
     }
 }
