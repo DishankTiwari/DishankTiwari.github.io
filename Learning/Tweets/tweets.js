@@ -1,10 +1,11 @@
 window.onload = function() {
     main();
-}
+};
 
 function main() {
     var color = "grey";
     var paper = Raphael(650, 100, 700, 700);
+    //var anim = Raphael.animation({transform: "r360"}, 2500).repeat(Infinity);
     var row = Math.sqrt(amitabh.length);
     var arr = [];
     s();
@@ -36,13 +37,14 @@ function main() {
                     color = "lightblue";
                 else if (arr[count].theme == "love")
                     color = "purple";
-                paper.circle(x, y, radius)
+                var c = paper.circle(x, y, radius)
                     .attr({
                         "fill": color,
                         "stroke": "none",
                         "cursor": "pointer",
                         "title": "@Amitabh Bachchan : " + amitabh[count].text
                     });
+                    //c.animate(anim);
                 angle += step;
             } else {
                 angle = 0;
@@ -54,9 +56,9 @@ function main() {
     function s() {
 
         for (i = 0; i < amitabh.length; i++) {
-            var s = amitabh[i].text;
+            var set = amitabh[i].text;
             arr.push({
-                text: s,
+                text: set,
                 retweet_count: amitabh[i].retweet_count
             });
             if (amitabh[i].text.match(/(cinema|trailer|song|movie|film)/i))
